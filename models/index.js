@@ -19,13 +19,6 @@ if (config.use_env_variable) {
   );
 }
 
-const object = {
-  hello: "world",
-  Yes: "MOMMA"
-}
-
-console.log(object);
-
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (

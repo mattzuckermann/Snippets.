@@ -6,5 +6,11 @@ module.exports = function(sequelize, DataTypes) {
     category: DataTypes.STRING
   });
 
+  // Snippet.belongsTo(models.User, {
+  //   foreignKey: {
+  //     allowNull: false
+  //   }
+  // });
+
   return Snippet;
 };
