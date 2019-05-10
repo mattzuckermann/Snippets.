@@ -32,8 +32,8 @@
           {{!-- Code --}}
           <div class="form-group">
             <label for="snippet-code" class="roboto">Code</label>
-            <textarea class="form-control rounded-0" id="snippet-code" aria-describedby="snippet-code" placeholder="Enter Code Snippet"
-              style="height: 275px;"></textarea>
+            <textarea class="form-control rounded-0" id="snippet-code" aria-describedby="snippet-code"
+              placeholder="Enter Code Snippet" style="height: 275px;"></textarea>
           </div>
 
           {{!-- Comment --}}
@@ -45,7 +45,8 @@
 
           {{!-- Button --}}
           <div class="form-inline float-right">
-            <a href="/home"><button type="button" class="btn btn-outline-danger roboto mr-4" aria-label="Cancel">Cancel</button></a>
+            <a href="/home"><button type="button" class="btn btn-outline-danger roboto mr-4"
+                aria-label="Cancel">Cancel</button></a>
             <button id="submit" class="btn btn-info float-right roboto">Create</button>
           </div>
         </form>
@@ -53,25 +54,6 @@
     </div>
   </div>
 </div>
-
-{{!--
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h3>Snippets:</h3>
-      <ul id="snippet-list" class="list-group">
-        {{#each snippets}}
-        <li data-id="{{this.id}}" class="list-group-item">
-          <a href="snippet/{{this.id}}">{{this.title}}</a>
-          <button class="btn btn-danger float-right delete">ｘ</button>
-        </li>
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-</div>
-</div> --}}
-
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

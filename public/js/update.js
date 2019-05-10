@@ -28,9 +28,7 @@ var API = {
 
 //Post onsubmit actions for update page
 var refreshUpdate = function() {
-  API.getSnippets().then(function() {
-    console.log("yes?");
-  });
+  API.getSnippets();
 };
 
 var handleConfirmButtonClick = function(event) {
@@ -38,7 +36,6 @@ var handleConfirmButtonClick = function(event) {
 
   var pathArray = window.location.pathname.split("/");
   var idToUpdate = pathArray.slice(3, 4).toString();
-  console.log(idToUpdate);
 
   var snippet = {
     title: $snippetTitle.val().trim(),

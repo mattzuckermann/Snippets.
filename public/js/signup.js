@@ -13,6 +13,7 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
+      alert("You must fill in both input boxes");
       return;
     }
     // If we have an email and password, run the signUpUser function

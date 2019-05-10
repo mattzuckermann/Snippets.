@@ -12,7 +12,10 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
+    localStorage.setItem("user", userData.email);
+
     if (!userData.email || !userData.password) {
+      alert("You must fill in both input boxes");
       return;
     }
 
