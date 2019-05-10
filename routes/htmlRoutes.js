@@ -10,14 +10,12 @@ module.exports = function(app) {
   app.post(
     "/login",
     passport.authenticate("local", {
-      successRedirect: "/",
+      successRedirect: "/home",
       failureRedirect: "/login"
     })
   );
 
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
-    console.log(req.user);
     if (req.user) {
       res.redirect("/home");
     }
@@ -25,8 +23,6 @@ module.exports = function(app) {
   });
 
   app.get("/signup", function(req, res) {
-    console.log(req.user);
-    // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/home");
     }
@@ -34,8 +30,6 @@ module.exports = function(app) {
   });
 
   app.get("/login", function(req, res) {
-    console.log(req.user);
-    // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/home");
     }
