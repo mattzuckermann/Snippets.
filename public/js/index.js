@@ -3,6 +3,7 @@ var $snippetTitle = $("#snippet-title");
 var $snippetCode = $("#snippet-code");
 var $snippetComment = $("#snippet-comment");
 var $snippetCategory = $("#snippet-category");
+var snippetUser = localStorage.getItem("username");
 
 var $submitBtn = $("#submit");
 var $snippetList = $("#snippet-list");
@@ -68,54 +69,64 @@ var refreshSnippets = function() {
 
 //CINDY's fx:
 var createNewSnippet = function(data) {
+  var newSnippetCard = $("<div>").addClass(
+    "card border-secondary mb-3 rounded-0"
+  );
+  var cardHeading = $("<div>").addClass("card-header");
+  var categoryBtn = $("<button>")
+    .addClass("btn btn-sm c-button")
+    .attr("disabled", "disabled")
+    .text(data.category);
+  var btnList = $("<ul>").addClass("list-inline float-right m-0");
+  var updateLink = $("<a>").attr("href", `snippet/update/${data.id}`);
+  var updateLi = $("<li>").addClass("list-inline-item");
+  var updatebtn = $("<button>")
+    .addClass("btn btn-secondary btn-sm rounded-0")
+    .text("Update");
+  var deleteLi = $("<li>").addClass("list-inline-item");
+  var deletebtn = $("<button>")
+    .addClass("btn btn-danger btn-sm rounded-0 ml-2 delete")
+    .attr("data-id", data.id)
+    .html(`<i class="fas fa-times"></i>`);
+  var newSnippetBody = $("<div>").addClass("card-body text-secondary");
+  var cardTitle = $("<h5>").addClass("card-title");
+  var title = $("<a>")
+    .attr("href", `snippet/update/${data.id}`)
+    .text(data.title);
+  var code = $("<pre>")
+    .addClass("prettyprint p-2")
+    .text(data.code);
 
-var newSnippetCard = $("<div>").addClass("card border-secondary mb-3 rounded-0");
-var cardHeading = $("<div>").addClass("card-header");
-var categoryBtn = $("<button>").addClass("btn btn-sm c-button").attr("disabled", "disabled").text(data.category);
-var btnList = $("<ul>").addClass("list-inline float-right m-0");
-var updateLink = $("<a>").attr("href", `snippet/update/${data.id}`);
-var updateLi = $("<li>").addClass("list-inline-item");
-var updatebtn = $("<button>").addClass("btn btn-secondary btn-sm rounded-0").text("Update");
-var deleteLi = $("<li>").addClass("list-inline-item");
-var deletebtn = $("<button>").addClass("btn btn-danger btn-sm rounded-0 ml-2 delete").attr("data-id", data.id).html(`<i class="fas fa-times"></i>`);
-var newSnippetBody = $("<div>").addClass("card-body text-secondary");
-var cardTitle = $("<h5>").addClass("card-title");
-var title = $("<a>").attr("href", `snippet/update/${data.id}`).text(data.title);
-var code = $("<pre>").addClass("prettyprint p-2").text(data.code);
+  updateLi.append(updatebtn);
+  updateLink.append(updateLi);
+  deleteLi.append(deletebtn);
+  btnList.append(updateLink);
+  btnList.append(deleteLi);
+  cardHeading.append(categoryBtn);
+  cardHeading.append(btnList);
+  cardTitle.append(title);
+  newSnippetBody.append(cardTitle);
+  newSnippetBody.append(code);
+  newSnippetCard.append(cardHeading);
+  newSnippetCard.append(newSnippetBody);
 
-updateLi.append(updatebtn);
-updateLink.append(updateLi);
-deleteLi.append(deletebtn);
-btnList.append(updateLink);
-btnList.append(deleteLi);
-cardHeading.append(categoryBtn);
-cardHeading.append(btnList);
-cardTitle.append(title);
-newSnippetBody.append(cardTitle);
-newSnippetBody.append(code);
-newSnippetCard.append(cardHeading);
-newSnippetCard.append(newSnippetBody);
-
-return newSnippetCard;
-
-}
+  return newSnippetCard;
+};
 
 var refreshCards = function() {
   API.getSnippets().then(function(data) {
-
     var cardContainer = $("#snippet-list");
     var snippetsToAdd = [];
-    
+
     for (let i = 0; i < data.length; i++) {
       snippetsToAdd.push(createNewSnippet(data[i]));
     }
 
     cardContainer.empty();
-    
-    cardContainer.append(snippetsToAdd);
 
-    });
-}
+    cardContainer.append(snippetsToAdd);
+  });
+};
 
 //end CINDY's attempt
 
@@ -128,7 +139,8 @@ var handleFormSubmit = function(event) {
     title: $snippetTitle.val().trim(),
     code: $snippetCode.val().trim(),
     comment: $snippetComment.val().trim(),
-    category: $snippetCategory.val().trim()
+    category: $snippetCategory.val().trim(),
+    username: snippetUser
   };
 
   if (!(snippet.title && snippet.code && snippet.comment && snippet.category)) {

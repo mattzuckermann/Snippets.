@@ -7,6 +7,12 @@ $(document).ready(function() {
   });
 });
 
+$("#logout").on("click", async function() {
+  await $.get("/logout");
+  await localStorage.removeItem("username");
+  window.location.reload("/");
+});
+
 window.onscroll = function() {
   navScroll();
 };

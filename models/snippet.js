@@ -3,14 +3,9 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     code: DataTypes.TEXT,
     comment: DataTypes.TEXT,
-    category: DataTypes.STRING
+    category: DataTypes.STRING,
+    username: DataTypes.STRING
   });
-
-  // Snippet.belongsTo(models.User, {
-  //   foreignKey: {
-  //     allowNull: false
-  //   }
-  // });
 
   return Snippet;
 };

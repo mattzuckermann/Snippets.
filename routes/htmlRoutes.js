@@ -46,16 +46,12 @@ module.exports = function(app) {
 
   // Load index page if authenticated
   app.get("/home", isAuthenticated, function(req, res) {
-    db.Snippet.findAll({}).then(function(dbSnippets) {
+    db.Snippet.findAll({
+      where: {
+        username: req.user.email
+      }
+    }).then(function(dbSnippets) {
       res.render("index", {
-        snippets: dbSnippets
-      });
-    });
-  });
-
-  app.get("/test", isAuthenticated, function(req, res) {
-    db.Snippet.findAll({}).then(function(dbSnippets) {
-      res.render("test", {
         snippets: dbSnippets
       });
     });
