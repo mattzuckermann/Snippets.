@@ -10,27 +10,27 @@ module.exports = function(app) {
   app.post(
     "/login",
     passport.authenticate("local", {
-      successRedirect: "/home",
+      successRedirect: "/",
       failureRedirect: "/login"
     })
   );
 
   app.get("/", function(req, res) {
-    if (req.user) {
+    if (req.user.email !== null) {
       res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/root.html"));
   });
 
   app.get("/signup", function(req, res) {
-    if (req.user) {
+    if (req.user.email !== null) {
       res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/login", function(req, res) {
-    if (req.user) {
+    if (req.user.email !== null) {
       res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
