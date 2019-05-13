@@ -22,8 +22,6 @@ $(document).ready(function() {
     signUpUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
-
-    window.location.replace("/home");
   });
 
   // Does a post to the signup route. If succesful, we are redirected to the members page
@@ -34,7 +32,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        window.location.replace(data);
+        window.location.replace("/home");
         // If there's an error, handle it by throwing up a boostrap alert
       })
       .catch(handleLoginErr);
