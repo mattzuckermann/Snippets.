@@ -23,7 +23,7 @@ $(document).ready(function() {
     emailInput.val("");
     passwordInput.val("");
 
-    window.location("/home");
+    window.location.replace("/home");
   });
 
   // Does a post to the signup route. If succesful, we are redirected to the members page
