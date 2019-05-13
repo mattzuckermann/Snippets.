@@ -23,6 +23,8 @@ $(document).ready(function() {
     loginUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
+
+    window.location("/home");
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
