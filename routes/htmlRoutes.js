@@ -16,23 +16,27 @@ module.exports = function(app) {
   );
 
   app.get("/", function(req, res) {
-    if (req.user) {
-      res.redirect("/home");
-    }
+    res.redirect("/home");
+  });
+
+  app.get("/welcome", function(req, res) {
+    // if (req.user) {
+    //   res.redirect("/home");
+    // }
     res.sendFile(path.join(__dirname, "../public/root.html"));
   });
 
   app.get("/signup", function(req, res) {
-    if (req.user) {
-      res.redirect("/home");
-    }
+    // if (req.user) {
+    //   res.redirect("/home");
+    // }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/login", function(req, res) {
-    if (req.user) {
-      res.redirect("/home");
-    }
+    // if (req.user) {
+    //   res.redirect("/home");
+    // }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
