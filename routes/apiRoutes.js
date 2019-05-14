@@ -63,6 +63,17 @@ module.exports = function(app) {
     });
   });
 
+  // Get specific user's snippets
+  app.get("/api/snippets/user", function(req, res) {
+    db.Snippet.findAll({
+      where: {
+        username: req.user.email
+      }
+    }).then(function(dbSnippet) {
+      res.json(dbSnippet);
+    });
+  });
+
   // Get route for returning posts of a specific category
   app.get("/api/snippets/category/:category", function(req, res) {
     db.Snippet.findAll({

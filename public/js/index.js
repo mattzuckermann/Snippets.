@@ -30,6 +30,12 @@ var API = {
       type: "GET"
     });
   },
+  getUserSnippets: function() {
+    return $.ajax({
+      url: "api/snippets/user",
+      type: "GET"
+    });
+  },
   deleteSnippet: function(id) {
     return $.ajax({
       url: "api/snippets/" + id,
@@ -114,7 +120,7 @@ var createNewSnippet = function(data) {
 };
 
 var refreshCards = function() {
-  API.getSnippets().then(function(data) {
+  API.getUserSnippets().then(function(data) {
     var cardContainer = $("#snippet-list");
     var snippetsToAdd = [];
 
