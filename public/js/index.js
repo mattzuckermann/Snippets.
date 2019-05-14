@@ -170,7 +170,7 @@ var handleDeleteBtnClick = function() {
   var idToDelete = $(this).attr("data-id");
 
   API.deleteSnippet(idToDelete).then(function() {
-    refreshCards();
+    window.location.reload();
   });
 };
 
