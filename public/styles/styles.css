@@ -163,3 +163,9 @@ a:hover {
   text-align: center;
   padding-top: 300px;
 }
+
+@media screen and (max-width: 490px) {
+  .rootContainer {
+    width: 100%;
+  }
+}
