@@ -165,7 +165,10 @@ a:hover {
 }
 
 @media screen and (max-width: 490px) {
-  .rootContainer {
-    width: 100%;
+  .display-1 {
+    font-size: 35px;
+  }
+  .subdisplay-1 {
+    font-size: 15px;
   }
 }
