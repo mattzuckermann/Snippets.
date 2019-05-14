@@ -52,6 +52,9 @@ var handleConfirmButtonClick = function(event) {
   API.updateSnippet(idToUpdate, snippet).then(function() {
     refreshUpdate();
   });
+
+  alert("Snippet Updated!");
+  window.location.replace("/home");
 };
 
 $confirmBtn.on("click", handleConfirmButtonClick);
