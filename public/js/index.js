@@ -120,7 +120,7 @@ var createNewSnippet = function(data) {
 };
 
 var refreshCards = function() {
-  API.getUserSnippets().then(function(data) {
+  API.getSnippets().then(function(data) {
     var cardContainer = $("#snippet-list");
     var snippetsToAdd = [];
 
