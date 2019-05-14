@@ -169,6 +169,12 @@ a:hover {
   -webkit-overflow-scrolling: touch;
 }
 
+@media screen and (max-width: 767px) {
+  #welcome {
+    padding-top: 90px;
+  }
+}
+
 @media screen and (max-width: 490px) {
   .display-1 {
     font-size: 40px;
@@ -185,8 +191,8 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 767px) {
-  #welcome {
-    padding-top: 90px;
+@media screen and (max-width: 470px) {
+  .logoutButton {
+    padding: 6px 14px;
   }
 }
