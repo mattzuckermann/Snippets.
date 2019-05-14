@@ -166,9 +166,18 @@ a:hover {
 
 @media screen and (max-width: 490px) {
   .display-1 {
-    font-size: 35px;
+    font-size: 40px;
   }
   .subdisplay-1 {
     font-size: 15px;
+  }
+  .welcomeRow {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #welcome {
+    padding-top: 30px;
   }
 }
