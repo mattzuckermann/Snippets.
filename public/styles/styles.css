@@ -176,8 +176,8 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 467px) {
   #welcome {
-    padding-top: 30px;
+    padding-top: 85px;
   }
 }
