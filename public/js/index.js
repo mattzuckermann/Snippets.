@@ -24,7 +24,7 @@ var API = {
       data: JSON.stringify(snippet)
     });
   },
-  getSnippets: function() {
+  getUserSnippets: function() {
     return $.ajax({
       url: "api/snippets",
       type: "GET"
@@ -46,7 +46,7 @@ var API = {
 
 // refreshsnippets gets new snippets from the db and repopulates the list
 var refreshSnippets = function() {
-  API.getSnippets().then(function(data) {
+  API.getUserSnippets().then(function(data) {
     var $snippets = data.map(function(snippet) {
       var $a = $("<a>")
         .title(snippet.title)
