@@ -174,10 +174,7 @@ a:hover {
   .welcomeRow {
     text-align: center;
   }
-}
-
-@media screen and (max-width: 467px) {
   #welcome {
-    padding-top: 85px;
+    padding-top: 180px;
   }
 }
