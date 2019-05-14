@@ -155,7 +155,7 @@ var handleFormSubmit = function(event) {
   }
 
   API.saveSnippet(snippet).then(function() {
-    window.location("/home");
+    window.location.replace("/home");
   });
 
   $snippetTitle.val("");
