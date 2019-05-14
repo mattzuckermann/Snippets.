@@ -155,7 +155,7 @@ var handleFormSubmit = function(event) {
   }
 
   API.saveSnippet(snippet).then(function() {
-    refreshSnippets();
+    window.location.reload("/home");
   });
 
   $snippetTitle.val("");
