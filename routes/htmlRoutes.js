@@ -72,7 +72,8 @@ module.exports = function(app) {
     if (category === "") {
       db.Snippet.findAll({
         where: {
-          title: { like: `%${search}%` }
+          title: { like: `%${search}%` },
+          username: req.user.email
         }
       }).then(function(dbSnippets) {
         res.render("index", {
