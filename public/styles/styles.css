@@ -164,6 +164,10 @@ a:hover {
   padding-top: 300px;
 }
 
+.rootContainer {
+  overflow: scroll;
+}
+
 @media screen and (max-width: 490px) {
   .display-1 {
     font-size: 40px;
@@ -177,11 +181,5 @@ a:hover {
   }
   #welcome {
     padding-top: 180px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  #welcome {
-    padding-top: 65px;
   }
 }
