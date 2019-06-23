@@ -29,4 +29,4 @@ Time permitting we would like to add these features:
 * Implement Dark Mode
 
 
-### [Go to Snippets!](https://morning-harbor-79094.herokuapp.com/)
+### [Go to Snippets!](https://snippets-mczuckermann.herokuapp.com/)
