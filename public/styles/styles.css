@@ -190,13 +190,3 @@ a:hover {
     padding-top: 180px;
   }
 }
-
-@media screen and (max-width: 470px) {
-  .logoutButton {
-    padding: 6px 14px;
-    font-size: 15px;
-  }
-  #username {
-    font-size: 15px;
-  }
-}

@@ -10,6 +10,9 @@
   {{!-- Bootstrap --}}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  {{!-- xxs Bootstrap package --}}
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/auipga/bootstrap-xxs/master/bootstrap-xxs.css"
+    media="screen" title="no title" charset="utf-8">
   {{!-- Styles --}}
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   {{!-- Add in Favicon Image --}}
@@ -40,15 +43,21 @@
 <body>
   {{!-- Navigation --}}
   <nav class="navbar navbar-light bg-light border-bottom shadow" id="navbar">
-    <div class="col-md-2"><a class="navbar-brand" href="/home" id="logo">
-        <img src="/imgs/Snippetslogo.png" class="d-inline-block align-top" alt="Snippets.">
-      </a></div>
-
-    <div id="username" class="col-9"></div>
-    <div class="col-3 col-md-1"><a class="hidden" id="logout">
-        <button class="btn btn-outline-secondary px-4 my-sm-0 mr-3 roboto rounded-0 logoutButton"
-          type="submit">Logout</button>
-      </a></div>
+    <div class="col-lg-5 col-md-4 col-sm-3 col-xs-2 col-xxs-1">
+      <a class="navbar-brand" href="/home" id="logo">
+        <picture>
+          <source media="(min-width:576px)" srcset="/imgs/Snippetslogo.png" alt="Snippets.">
+          <source media="(min-width:5px)" srcset="/imgs/Snippetslogoshort.png" alt="S.">
+          <img src="/imgs/Snippetslogo.png" alt="Snippets.">
+        </picture>
+      </a>
+    </div>
+    <div id="username" class="col-lg-6 col-md-6 col-sm-7 col-xs-3 col-xxs-5"></div>
+    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-7 col-xxs-6">
+      <a class="hidden" id="logout">
+        <button class="btn btn-outline-secondary roboto rounded-0 logoutButton" type="submit">Logout</button>
+      </a>
+    </div>
 
   </nav>
 
